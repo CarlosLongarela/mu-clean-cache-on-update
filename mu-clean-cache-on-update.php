@@ -75,14 +75,6 @@ add_action( 'activated_plugin', 'cl_nginx_cache_purge', 10, 0 ); // After a plug
 add_action( 'deactivated_plugin', 'cl_nginx_cache_purge', 10, 0 ); // After a plugin has been deactivated.
 add_action( 'switch_theme', 'cl_nginx_cache_purge', 10, 0 ); // After a Theme has been changed.
 
-// Beaver Builder.
-if ( defined( 'FL_BUILDER_VERSION' ) ) {
-	add_action( 'fl_builder_cache_cleared', 'cl_nginx_cache_purge', 10, 3 );
-	add_action( 'fl_builder_after_save_layout', 'cl_nginx_cache_purge', 10, 3 );
-	add_action( 'fl_builder_after_save_user_template', 'cl_nginx_cache_purge', 10, 3 );
-	add_action( 'upgrader_process_complete', 'cl_nginx_cache_purge', 10, 3 );
-}
-
 // Elementor.
 if ( defined( 'ELEMENTOR_VERSION' ) ) {
 	add_action( 'elementor/core/files/clear_cache', 'cl_nginx_cache_purge', 10, 3 );
@@ -100,6 +92,14 @@ if ( defined( 'CT_VERSION' ) ) {
 	add_action( 'wp_ajax_oxygen_vsb_cache_generated','cl_nginx_cache_purge', 99 );
 	add_action( 'update_option__oxygen_vsb_universal_css_url','cl_nginx_cache_purge', 99 );
 	add_action( 'update_option__oxygen_vsb_css_files_state','cl_nginx_cache_purge', 99 );
+}
+
+// Beaver Builder.
+if ( defined( 'FL_BUILDER_VERSION' ) ) {
+	add_action( 'fl_builder_cache_cleared', 'cl_nginx_cache_purge', 10, 3 );
+	add_action( 'fl_builder_after_save_layout', 'cl_nginx_cache_purge', 10, 3 );
+	add_action( 'fl_builder_after_save_user_template', 'cl_nginx_cache_purge', 10, 3 );
+	add_action( 'upgrader_process_complete', 'cl_nginx_cache_purge', 10, 3 );
 }
 
 add_action( 'customize_save_after', 'cl_cloudflare_cache_purge', 10, 0 ); // After Theme customizer is saved.
