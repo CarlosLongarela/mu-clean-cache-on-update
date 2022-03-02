@@ -2,7 +2,7 @@
 /**
  * Purge Nginx cache and CloudFlare cache if it's configured.
  *
- * @package         GridPane\GridPaneDisableWPVersion
+ * @package         NginxCache\ExtendedNginxCachePurge
  * @since           0.1.0
  * @author          Carlos Longarela
  * @license         GNU-2.0+
