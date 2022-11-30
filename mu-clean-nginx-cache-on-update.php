@@ -74,6 +74,7 @@ add_action( 'upgrader_process_complete', 'cl_nginx_cache_purge', 10, 0 ); // Aft
 add_action( 'activated_plugin', 'cl_nginx_cache_purge', 10, 0 ); // After a plugin has been activated.
 add_action( 'deactivated_plugin', 'cl_nginx_cache_purge', 10, 0 ); // After a plugin has been deactivated.
 add_action( 'switch_theme', 'cl_nginx_cache_purge', 10, 0 ); // After a Theme has been changed.
+//add_action( 'save_post', 'cl_nginx_cache_purge', 10, 3 ); // After a page has been saved.
 
 // Elementor.
 if ( defined( 'ELEMENTOR_VERSION' ) ) {
